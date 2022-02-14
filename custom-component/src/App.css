@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(250, 250, 250);
+  box-sizing: border-box;
+}
+
+#title {
+  font-size: 3rem;
+  margin: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sub_title {
+  font-size: 1rem;
+  float: left;
+  margin: 10px;
+}
+
+.box{
+  width: 90%;
+  height: 20rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  border: 1px solid rgb(184, 184, 184);
+  background-color: #ffffff;
+  box-shadow: 1px 1xp 3px rgb(210, 210, 210);
+}
