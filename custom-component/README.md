@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# 구현한 방법과 이유
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+** Modal은 CODESTATES에서 final project할때 
+styled-components를 이용해서 구현했는데 
+Modal이 필요하다는 의견으로 여러가지 많이 시도 하며 구현했습니다.
 
-## Available Scripts
+component에서 버튼을 클릭할떄 
+ModalBackDrop Element로 흐린화면에서
+Modal 창이 보일수 있게 하였습니다. **
 
-In the project directory, you can run:
+Tab은 3개의 Tab 메뉴들을 3개로 설정하여
+gif에서 보이는 것 처럼 하나의  tab을 클릭할때 
+객체요소로 되어 있는 배열을 하나씩 나올수 있도록 구현했습니다. 
 
-### `npm start`
+Toggle은 IOS에서 많이 쓰이는데. 
+클릭할때 활성화가 될수 있도록 IOS에서 자주 보이는 버튼 형식으로 구현했습니다. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 구현하면서 어려웠던 점과 해결방법 
 
-### `npm test`
+Modal에서는 styled-components에서 element 끼리 색상이 
+일치하지 않아서 어떤게 문제였을까 생각을했는데
+modal창에서 attrs 메소드의 role에서 string이 아닌 
+백틱(``) 리터럴을 사용하고 보니 코드에서 색상을 맞출 수 있게 되었습니다. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Toggle에서는 버튼을 누르면 왼쪽에서 오른쪽으로 이동이 되지만
+활성하는 바탕색이 변화가 없어 다시 확인해 보니
 
-### `npm run build`
+{& .toggle--checked} 가 아닌
+{&.toggle--checked}로 수정하여 Toggle의 바탕색이 
+색상에 맞게 변경되었습니다. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 자세한 실행방법
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Modal에서는 Open Modal 버튼이 있습니다. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+그버튼을 누르면 Modal 한개와 그외에 있는 화면은 옅은색으로 변하고
+다시 원래 화면으로 돌아 갈때에는 Modal창 내에 있는 x(times) 버튼을 누르면
+원래 화면으로 돌아옵니다. 
 
-### `npm run eject`
+Tab에서는 초기 tab은 'Tab1'부터 되어 있습니다. 
+다른 tab을 누를때마다 선택된 탭은 활성화된 tab색상으로 변하고 
+하단 부에 있는 content가 변화됩니다. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+toggle에서는 버튼이 왼쪽으로 되어 있으나
+클릭시 IOS처럼 오른쪽으로 이동하여 활성화된 색상으로 변합니다. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
